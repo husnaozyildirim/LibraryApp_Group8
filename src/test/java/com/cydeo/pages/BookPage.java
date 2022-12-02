@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BookPage extends BasePage {
@@ -40,6 +41,17 @@ public class BookPage extends BasePage {
     public WebElement editBook(String book) {
         String xpath = "//td[3][.='" + book + "']/../td/a";
         return Driver.getDriver().findElement(By.xpath(xpath));
+    }
+
+    @FindBy(xpath = "//select[@id='book_categories']//option")
+    public List<WebElement> allBookCategories;
+
+    public List<String> getAllBookCategoriesText (){
+        List<String> all = new ArrayList<>();
+        for (int i = 1; i < allBookCategories.size(); i++) {
+            all.add( allBookCategories.get(i).getText() ) ;
+        }
+        return all ;
     }
 
 
