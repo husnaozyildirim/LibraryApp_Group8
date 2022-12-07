@@ -4,7 +4,7 @@ Feature: Books module
   @us6
   Scenario Outline: Verify added book is matching with DB
     Given I login as a librarian
-    And I navigate to Books page
+    When I navigate to "Books" page
     When the librarian click to add book
     And the librarian enter book name "<Book Name>"
     When the librarian enter ISBN "<ISBN>"

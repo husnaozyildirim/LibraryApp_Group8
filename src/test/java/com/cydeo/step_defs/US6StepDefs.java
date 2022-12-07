@@ -31,12 +31,7 @@ public class US6StepDefs {
 
     }
 
-    @Given("I navigate to Books page")
-    public void i_navigate_to_Books_page() {
 
-        BrowserUtil.waitForVisibility(bookPage.books,10);
-
-    }
 
 
 
